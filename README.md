@@ -9,6 +9,27 @@ At the end of the day, this is very crude but it's a start and was immensely hel
 
 If you like it, AWESOME... if not, sorry... I will try harder next time. :D
 
+## Screenshots
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+  <div style="flex: 1; text-align: center; margin: 10px;">
+    <img src="images/screen1.png" alt="Screenshot 1" style="width: 300px; margin: 10px;"/>
+    <p>Screenshot 1</p>
+  </div>
+  <div style="flex: 1; text-align: center; margin: 10px;">
+    <img src="images/screen2.png" alt="Screenshot 2" style="width: 300px; margin: 10px;"/>
+    <p>Screenshot 2</p>
+  </div>
+  <div style="flex: 1; text-align: center; margin: 10px;">
+    <img src="images/screen3.png" alt="Screenshot 3" style="width: 300px; margin: 10px;"/>
+    <p>Screenshot 3</p>
+  </div>
+  <div style="flex: 1; text-align: center; margin: 10px;">
+    <img src="images/screen4.png" alt="Screenshot 4" style="width: 300px; margin: 10px;"/>
+    <p>Screenshot 4</p>
+  </div>
+</div>
+
 ## Installation
 
 1. Install `http-server` locally by running:
