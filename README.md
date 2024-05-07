@@ -9,6 +9,10 @@ At the end of the day, this is very crude but it's a start and was immensely hel
 
 If you like it, AWESOME... if not, sorry... I will try harder next time. :D
 
+## Demo
+
+You can try it [here](https://michaelmartinez.github.io/GPUvsAPI/)
+
 ## Screenshots
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
