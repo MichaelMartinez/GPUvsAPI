@@ -16,17 +16,25 @@
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-1-2">
           <h2>GPU Cost Calculator</h2>
-          
-          <form class="pure-form pure-form-stacked">
-            <label for="purchasePrice">Initial Purchase Price ($):</label>
-            <input type="number" id="purchasePrice" value="1500" required />
-            <span class="tooltip"
-              >Enter the initial purchase price of the GPU</span
-            >
 
-            <label for="powerCost"
-              >Cost of Power Consumption per Kilowatt Hour ($):</label
-            >
+          <form class="pure-form pure-form-stacked">
+            <div class="tooltip">
+              <label for="purchasePrice">Initial Purchase Price ($):</label>
+              <span class="tooltiptext"
+                >Enter the initial purchase price of the GPU</span
+              >
+            </div>
+            <input type="number" id="purchasePrice" value="1500" required />
+
+            <div class="tooltip">
+              <label for="powerCost"
+                >Cost of Power Consumption per Kilowatt Hour ($):</label
+              >
+              <span class="tooltiptext"
+                >Enter the cost of power consumption per kilowatt hour in your
+                region</span
+              >
+            </div>
             <input
               type="number"
               id="powerCost"
@@ -34,90 +42,147 @@
               value="0.12"
               required
             />
-            <span class="tooltip"
-              >Enter the cost of power consumption per kilowatt hour in your
-              region</span
-            >
 
-            <label for="gpuWattage">GPU Power Consumption (Watts):</label>
+            <div class="tooltip">
+              <label for="gpuWattage">GPU Power Consumption (Watts):</label>
+              <span class="tooltiptext"
+                >Enter the power consumption of your GPU or GPUs in watts</span
+              >
+            </div>
             <input type="number" id="gpuWattage" value="350" required />
-            <span class="tooltip"
-              >Enter the power consumption of your GPU or GPUs in watts</span
-            >
 
-            <label for="depreciationRate"
-              >Depreciation Rate (% per year):</label
-            >
+            <div class="tooltip">
+              <label for="depreciationRate"
+                >Depreciation Rate (% per year):</label
+              >
+              <span class="tooltiptext"
+                >Enter the depreciation rate of the GPU per year</span
+              >
+            </div>
             <input type="number" id="depreciationRate" value="8" required />
-            <span class="tooltip"
-              >Enter the depreciation rate of the GPU per year</span
-            >
 
-            <label for="yearsOfOwnership">Years of Ownership:</label>
+            <div class="tooltip">
+              <label for="yearsOfOwnership">Years of Ownership:</label>
+              <span class="tooltiptext"
+                >Enter the number of years you plan to own the GPU or how long
+                it will be useful</span
+              >
+            </div>
             <input type="number" id="yearsOfOwnership" value="4" required />
-            <span class="tooltip"
-              >Enter the number of years you plan to own the GPU or how long it
-              will be useful</span
-            >
 
-            <label for="hoursPerDay">Hours of Use per Day:</label>
+            <div class="tooltip">
+              <label for="hoursPerDay">Hours of Use per Day:</label>
+              <span class="tooltiptext"
+                >Enter the number of hours the GPU is used per day</span
+              >
+            </div>
             <input type="number" id="hoursPerDay" value="8" required />
-            <span class="tooltip"
-              >Enter the number of hours the GPU is used per day</span
-            >
 
-            <label for="tokensPerSecond"
-              >Estimated Tokens Generated per Second:</label
-            >
+            <div class="tooltip">
+              <label for="tokensPerSecond"
+                >Estimated Tokens Generated per Second:</label
+              >
+              <span class="tooltiptext"
+                >Enter the estimated number of tokens generated per second</span
+              >
+            </div>
             <input type="number" id="tokensPerSecond" value="30" required />
-            <span class="tooltip"
-              >Enter the estimated number of tokens generated per second</span
-            >
           </form>
         </div>
 
         <div class="pure-g">
           <div class="pure-u-1">
-            <h2>Token Calculator</h2>
+            <h1>Understanding Token Calculations</h1>
             <p>
-              Tokens are calculated based on the input and output of the model.
-              For example, if you generate 32k tokens, 3/4 of that is 24k words.
-              Each page averages around 500 words or 0.5k words. So, 24k / 0.5k
-              = 24 x 2 = ~48 pages.
+              Tokens are a fundamental unit used to measure the amount of text
+              processed by our model. Here's how we approximate the usage and
+              cost:
             </p>
+
+            <h2>Token to Word Conversion:</h2>
+            <ul>
+              <li>
+                Tokens are calculated based on the text input to and output from
+                the model.
+              </li>
+              <li>
+                For instance, if you generate 32,000 tokens, this roughly
+                translates to 24,000 words, as typically 3/4 of the tokens
+                represent actual words.
+              </li>
+            </ul>
+
+            <h2>Words to Pages Estimation:</h2>
+            <ul>
+              <li>On average, each page contains about 500 words.</li>
+              <li>
+                Therefore, 24,000 words are equivalent to approximately 48 pages
+                (since 24,000 words / 500 words per page = 48 pages).
+              </li>
+            </ul>
+
+            <h2>Input and Output Token Relationship:</h2>
+            <ul>
+              <li>
+                For every input token, there is typically an equivalent output
+                token. This means that the total number of tokens considered
+                will be a combination of both input and output tokens.
+              </li>
+            </ul>
+
+            <h2>Cost Calculation:</h2>
+            <ul>
+              <li>
+                The cost is computed based on the total tokens processed. This
+                includes both the tokens for input and the tokens for output.
+              </li>
+              <li>
+                Although this method provides a good baseline, please note that
+                it is an approximation and might vary based on specific text
+                characteristics and model behavior.
+              </li>
+            </ul>
+
             <p>
-              As a rule of thumb, for every input token, there will be an output
-              token. So generated tokens will be calculated against the input
-              and output price. This isn't a perfect calculation, but it's a
-              good starting point.
+              This approach gives you a straightforward way to estimate how much
+              content you can process and the associated costs. Remember, this
+              is a starting point, and you might need to adjust these estimates
+              based on your actual usage.
             </p>
           </div>
         </div>
+
         <div class="pure-u-1 pure-u-md-1-2">
           <h2>API Cost Calculator</h2>
           <form class="pure-form pure-form-stacked">
-            <label for="inputTokenPrice"
-              >Price of Tokens for Input ($ per million):</label
-            >
+            <div class="tooltip">
+              <label for="inputTokenPrice"
+                >Price of Tokens for Input ($ per million):</label
+              >
+              <span class="tooltiptext"
+                >Enter the price of tokens for input in millions</span
+              >
+            </div>
             <input type="number" id="inputTokenPrice" value="10" required />
-            <span class="tooltip"
-              >Enter the price of tokens for input in millions</span
-            >
 
-            <label for="outputTokenPrice"
-              >Price of Tokens for Output ($ per million):</label
-            >
+            <div class="tooltip">
+              <label for="outputTokenPrice"
+                >Price of Tokens for Output ($ per million):</label
+              >
+              <span class="tooltiptext"
+                >Enter the price of tokens for output in millions</span
+              >
+            </div>
             <input type="number" id="outputTokenPrice" value="15" required />
-            <span class="tooltip"
-              >Enter the price of tokens for output in millions</span
-            >
 
-            <label for="tokensPerDay">Tokens per Day:</label>
+            <div class="tooltip">
+              <label for="tokensPerDay">Tokens per Day:</label>
+              <span class="tooltiptext"
+                >Enter the number of tokens you plan to generate per day for
+                token calculation</span
+              >
+            </div>
             <input type="number" id="tokensPerDay" value="10000" required />
-            <span class="tooltip"
-              >Enter the number of tokens you plan to generate per day for token
-              calculation</span
-            >
           </form>
         </div>
       </div>
@@ -151,7 +216,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
   </body>

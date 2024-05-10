@@ -3,64 +3,111 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
-}
-
-.container {
+    transition: background-color 0.3s ease; /* added transition effect */
+  }
+  
+  .container {
     max-width: 960px;
     margin: 0 auto;
     border: 2px solid #ccc;
     padding: 20px;
-}
-
-h1, h2 {
+    border-radius: 10px; /* added border-radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* added box-shadow */
+  }
+  
+  h1, h2 {
     text-align: center;
-}
-
-form {
+    color: #333; /* changed text color */
+  }
+  
+  form {
     margin-bottom: 20px;
-}
-
-.text-center {
+    padding: 20px; /* added padding */
+    border: 1px solid #ccc; /* added border */
+    border-radius: 10px; /* added border-radius */
+  }
+  
+  .text-center {
     text-align: center;
-}
-
-#costReport {
+  }
+  
+  #costReport {
     background-color: #f9f9f9;
     padding: 10px;
     label {
-        display: block;
-        margin-bottom: 5px;
+      display: block;
+      margin-bottom: 5px;
     }
-
     input {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc; /* added border */
+      border-radius: 5px; /* added border-radius */
     }
-
     .tooltip {
-        display: block;
-        font-size: 12px;
-        color: #777;
-        margin-bottom: 10px;
+      display: block;
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 10px;
     }
-
     margin-bottom: 20px;
-}
-
-/* Add dark mode styles */
-.dark-mode {
+  }
+  
+  /* Add dark mode styles */
+  .dark-mode {
     background-color: #333;
     color: #fff;
-}
-
-/* Apply dark mode to specific elements */
-body.dark-mode {
+  }
+  
+  /* Apply dark mode to specific elements */
+  body.dark-mode {
     background-color: #333;
     color: #fff;
-}
-
-.container.dark-mode {
+  }
+  
+  .container.dark-mode {
     background-color: #444;
     color: #fff;
-}
+  }
+  
+  /* Add tooltip styles */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #666;
+    cursor: help;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
